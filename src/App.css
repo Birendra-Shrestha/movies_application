@@ -290,3 +290,60 @@ header .nav-links li:last-child {
   text-align: center;
 }
 
+.container-footer i{
+  font-size: 20px;
+  margin-right: 20px;
+
+}
+
+.carousel-item img{
+  height: 500px;
+  object-fit: fill;
+}
+@media screen and(max-width:992px) {
+  .carousel-item img{
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item img{
+    height: 250px;
+  }
+}
+
+.container-footer footer{
+  padding-left: 15px;
+}
+.container-footer img{
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+}
+/* dropdowm */
+
+/* ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+li i{
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+.dropdown{
+  width: 100%;
+  background-color: green;
+  position: absolute;
+  display: none;
+}
+
+ul li:hover .dropdown{
+  display: block;
+}
+.dropdown li a{
+  display: block;
+} */

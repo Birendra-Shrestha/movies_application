@@ -11,26 +11,27 @@ const Header = () => {
                     </div>
                     <div className="nav-links">
                         <li>
-                            <Link to="/">Watch List</Link>
+                            <Link to="/watchlist">Watch List</Link>
                         </li>
                         <li>
                             <Link to="/watched">Watched</Link>
                         </li>
                         <li>
                             <Link to="/add" className="btn">
-                                + add
+                                Search
                             </Link>
                         </li>
 
                         <li>
-                            <Link ><i className="far fa-user">
-                                <ul>
-                                    <li><Link to="/signin">Signin</Link></li>
-                                    <li><Link to="/signup">Signup</Link></li>
-                                </ul>
-                            </i>
-                            </Link>
+                            <Link ><i className="far fa-user"></i></Link>
+                            <ul className="dropdown">
+                                <li>
+                                    <Link to="/signin">Signin</Link>
+                                    <Link to="/signup">Signup</Link>
+                                </li>
+                            </ul>
                         </li>
+
 
                     </div>
                 </div>
@@ -38,5 +39,6 @@ const Header = () => {
         </header>
     );
 };
+
 
 export default Header;

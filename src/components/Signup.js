@@ -1,26 +1,31 @@
-import React,{useState} from 'react'
-import {Form, Field, Formik, ErrorMessage } from 'formik'
-import * as Yup from 'yup'
+import React, { useState } from 'react';
+import { Form, Formik, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-    const[firstname,setFirstName]=useState('')
-    const[lastname,setLastName]=useState('')
+    const [firstname, setFirstName] = useState('')
+    const [lastname, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [cpassword, setCpassword] = useState('')
 
-    const handle = () => {
+
+    function handleSubmit(e) {
+        e.preventDefault('firstname');
+        console.log('You clicked submit.');
+    }
+
+    const navigate=useNavigate()
+    function handleClick(){
         localStorage.setItem('FirstName', firstname)
         localStorage.setItem('LastName', lastname)
         localStorage.setItem('Email', email)
         localStorage.setItem('Password', password)
         localStorage.setItem('ConfirmPassword', cpassword)
-    }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log('You clicked submit.');
-      }
+        navigate("/signin")
+    }
 
     return (
         <>
@@ -40,9 +45,9 @@ const Signup = () => {
                         .required('Email is mandatory'),
 
                     password: Yup.string()
+                        .required('Password is mandatory')
                         .matches(/(?=.*[A-Za-z])(?=.*[0=9])(?=.*[!@#$%^&*-])[A-Za-z0-9!@#$%^&*-]{8,}$/,
-                            'must contain one numeric, one lowecase, uppercase and special character')
-                        .required('Password is mandatory'),
+                            'must contain one numeric, one lowecase, uppercase and special character'),
 
                     cpassword: Yup.string()
                         .required('Confirm password is mandatory')
@@ -54,11 +59,11 @@ const Signup = () => {
                     <div className='row d-flex justify-content-center'>
                         <div className='col-md-7'>
                             <div className='shadow-lg p-3'>
-                                <h2 className='text-muted text-center'>Register Form</h2>
+                                <h2 className='text-muted text-center'>Signup Form</h2>
                                 <Form onSubmit={handleSubmit}>
                                     <div className='mb-3'>
                                         <label htmlFor='firstname'>FirstName</label>
-                                        <Field type='text'  name='firstname' className='form-control' />
+                                        <input type='text' name='firstname' className='form-control'onChange={(e) => setFirstName(e.target.value)} required/>
                                         <ErrorMessage name='firstname'>
                                             {msg => <div style={{ color: 'red' }}>{msg}</div>}
                                         </ErrorMessage>
@@ -66,7 +71,7 @@ const Signup = () => {
 
                                     <div className='mb-3'>
                                         <label htmlFor='lastname'>LastName</label>
-                                        <Field type='text' name='lastname' className='form-control' />
+                                        <input type='text' name='lastname' className='form-control'onChange={(e) => setLastName(e.target.value)} required />
                                         <ErrorMessage name='lastname'>
                                             {msg => <div style={{ color: 'red' }}>{msg}</div>}
                                         </ErrorMessage>
@@ -74,7 +79,7 @@ const Signup = () => {
 
                                     <div className='mb-3'>
                                         <label htmlFor='email'>Email</label>
-                                        <Field type='email'  name='email' className='form-control' />
+                                        <input type='email' name='email' className='form-control'onChange={(e) => setEmail(e.target.value)} required/>
                                         <ErrorMessage name='email'>
                                             {msg => <div style={{ color: 'red' }}>{msg}</div>}
                                         </ErrorMessage>
@@ -82,7 +87,7 @@ const Signup = () => {
 
                                     <div className='mb-3'>
                                         <label htmlFor='password'>Password</label>
-                                        <input type='password'  name='password' className='form-control' />
+                                        <input type='password' name='password' className='form-control'onChange={(e) => setPassword(e.target.value)} required/>
                                         <ErrorMessage name='password'>
                                             {msg => <div style={{ color: 'red' }}>{msg}</div>}
                                         </ErrorMessage>
@@ -90,14 +95,14 @@ const Signup = () => {
 
                                     <div className='mb-3'>
                                         <label htmlFor='password'>Confirm Password</label>
-                                        <input type='password'  name='cpassword' className='form-control' />
+                                        <input type='password' name='cpassword' className='form-control'onChange={(e) => setCpassword(e.target.value)} required />
                                         <ErrorMessage name='cpassword'>
                                             {msg => <div style={{ color: 'red' }}>{msg}</div>}
                                         </ErrorMessage>
                                     </div>
 
                                     <div className='mb-2'>
-                                        <button className='btn btn-primary' onClick={handle}>Register</button>
+                                        <button className='btn btn-primary' onClick={handleClick}>Register</button>
                                     </div>
                                 </Form>
                             </div>
@@ -105,9 +110,8 @@ const Signup = () => {
                     </div>
                 </div>
             </Formik>
-
         </>
     )
 }
 
-export default Signup
+export default Signup;
