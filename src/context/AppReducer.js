@@ -24,14 +24,14 @@ export const AppReducer = (state, action) => {
           ),
         };
   
-      case "MOVE_TO_WATCHLIST":
-        return {
-          ...state,
-          watched: state.watched.filter(
-            (movie) => movie.id !== action.payload.id
-          ),
-          watchList: [action.payload, ...state.watchList],
-        };
+      // case "MOVE_TO_WATCHLIST":
+      //   return {
+      //     ...state,
+      //     watched: state.watched.filter(
+      //       (movie) => movie.id !== action.payload.id
+      //     ),
+      //     watchList: [action.payload, ...state.watchList],
+      //   };
   
       case "REMOVE_FROM_WATCHED":
         return {

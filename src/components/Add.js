@@ -44,7 +44,7 @@ const Add = () => {
             <ul className="results">
               {results.map((movie, index) => (
                 <li key={index}>
-                  <ResultCard movie={movie} />
+                  <ResultCard movie={movie}/>
                 </li>
               ))}
             </ul>

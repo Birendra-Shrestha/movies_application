@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 const HomePage = () => {
     return (
         <>
@@ -13,10 +14,10 @@ const HomePage = () => {
                         <img src="../images/movie2.jpg" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="../images/movie1.jpg" className="d-block w-100" alt="..." />
+                        <img src="../images/movie4.jpg" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="../images/movie.jpeg" className="d-block w-100" alt="..." />
+                        <img src="../images/movie3.jpg" className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -28,6 +29,7 @@ const HomePage = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
+            <Card/>
         </>
     )
 }

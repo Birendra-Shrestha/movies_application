@@ -27,12 +27,10 @@ const Header = () => {
                             <ul className="dropdown">
                                 <li>
                                     <Link to="/signin">Signin</Link>
-                                    <Link to="/signup">Signup</Link>
+                                    <Link to="/registration">Signup</Link>
                                 </li>
                             </ul>
                         </li>
-
-
                     </div>
                 </div>
             </div>

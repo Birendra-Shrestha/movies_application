@@ -1,12 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Add from "./components/Add";
 import Footer from "./components/Footer";
+import ForgotPassword from "./components/ForgotPassword";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
+import Registration from "./components/Registration";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
+import ViewDetails from "./components/ViewDetails";
 import Watched from "./components/Watched";
 import WatchList from "./components/WatchList";
 import { GlobalContextProvider } from "./context/GlobalState";
@@ -23,6 +26,9 @@ const App = () => {
           <Route path="/add" element={<Add />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/registration" element={<Registration/>}/>
+          <Route path="/forgotpassword" element={<ForgotPassword/>}/>
+          <Route path="/viewdetails" element={<ViewDetails/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

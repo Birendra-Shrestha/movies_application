@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from "react"; 
 import { GlobalContext } from "../context/GlobalState";
 
 const MovieControl = ({ movie, type }) => {
@@ -30,6 +30,7 @@ const MovieControl = ({ movie, type }) => {
           <button className="ctrl-btn" onClick={() => moveToWatchlist(movie)}>
             <i className="fa-fw far fa-eye-slash"></i>
           </button>
+          
 
           <button
             className="ctrl-btn"
