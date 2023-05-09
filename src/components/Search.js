@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ResultCard } from "./ResultCard";
 
-const Add = () => {
+const Search = () => {
   const TMDB_KEY = "afcc4e756d500720208345094fe13a77";
 
   const [query, setQuery] = useState("");
@@ -55,4 +55,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default Search;

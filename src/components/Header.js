@@ -17,7 +17,7 @@ const Header = () => {
                             <Link to="/watched">Watched</Link>
                         </li>
                         <li>
-                            <Link to="/add" className="btn">
+                            <Link to="/search" className="btn">
                                 Search
                             </Link>
                         </li>
